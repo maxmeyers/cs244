@@ -74,12 +74,16 @@ class BBTopo(Topo):
         super(BBTopo, self).__init__()
 
         # TODO: create two hosts
+        h1 = self.addHost('h1')
+        h2 = self.addHost('h2')
 
         # Here I have created a switch.  If you change its name, its
         # interface names will change from s0-eth1 to newname-eth1.
-        self.addSwitch('s0')
+        s0 = self.addSwitch('s0')
 
         # TODO: Add links with appropriate characteristics
+        self.addLink(h1, s0)
+        self.addLink(h2, s0)
         return
 
 # Simple wrappers around monitoring utilities.  You are welcome to
@@ -156,7 +160,7 @@ def bufferbloat():
     # from h1 to h2 (say) 3 times.  Hint: check what the following
     # command does: curl -o /dev/null -s -w %{time_total} google.com
     # Now use the curl command to fetch webpage from the webserver you
-    # spawned on host h2 (not from google!)
+    # spawned on host h1 (not from google!)
 
     # Hint: have a separate function to do this and you may find the
     # loop below useful.
