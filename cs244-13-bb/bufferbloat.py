@@ -82,8 +82,8 @@ class BBTopo(Topo):
         s0 = self.addSwitch('s0')
 
         # TODO: Add links with appropriate characteristics
-        self.addLink(h1, s0)
-        self.addLink(h2, s0)
+        l1 = self.addLink(h1, s0, delay="10ms")
+        l2 = self.addLink(h2, s0, delay="10ms")
         return
 
 # Simple wrappers around monitoring utilities.  You are welcome to
@@ -104,6 +104,7 @@ def start_qmon(iface, interval_sec=0.1, outfile="q.txt"):
     return monitor
 
 def start_iperf(net):
+    h1 = net.getNodeByName('h1')
     h2 = net.getNodeByName('h2')
     print "Starting iperf server..."
     # For those who are curious about the -w 16m parameter, it ensures
@@ -112,6 +113,7 @@ def start_iperf(net):
     server = h2.popen("iperf -s -w 16m")
     # TODO: Start the iperf client on h1.  Ensure that you create a
     # long lived TCP flow.
+    client = h1.popen("iperf -c h2 -w 16m")
 
 def start_webserver(net):
     h1 = net.getNodeByName('h1')
@@ -127,7 +129,9 @@ def start_ping(net):
     # Hint: Use host.popen(cmd, shell=True).  If you pass shell=True
     # to popen, you can redirect cmd's output using shell syntax.
     # i.e. ping ... > /path/to/ping.
-
+    h1 = net.getNodeByName('h1')
+    h2 = net.getNodeByName('h2')
+    h1.popen("ping h2", shell=True)
 
 def bufferbloat():
     if not os.path.exists(args.dir):
