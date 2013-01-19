@@ -15,7 +15,7 @@ for qsize in 20 100; do
     dir=bb-q$qsize
 
     # TODO: Run bufferbloat.py here...
-    python bufferbloat.py
+    python bufferbloat.py --bw-net 1.5 --dir .
 
     # TODO: Ensure the input file names match the ones you use in
     # bufferbloat.py script.  Also ensure the plot file names match
