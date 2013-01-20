@@ -135,9 +135,9 @@ def start_ping(net):
 
 def mean_stddev(values):
     avg = sum(values) / len(values)
-    sq_diffs = [len(values)]
+    sq_diffs = []
     for x in range(len(values)):
-        sq_diffs[x] = pow(values[x] - avg, 2)
+        sq_diffs.append(pow(values[x] - avg, 2))
     std_dev = math.sqrt(sum(sq_diffs) / len(values))
     return (avg, std_dev)
 
@@ -178,14 +178,12 @@ def bufferbloat():
     # Hint: have a separate function to do this and you may find the
     # loop below useful.
     start_time = time()
-    count = 0
     fetch_times= []
     while True:
         # do the measurement (say) 3 times.
         for x in range(3):
             fetch_time = h2.cmd("curl -o /dev/null -s -w %{time_total} " + h1.IP() + ":8000/http/index.html")
-            fetch_times.append(fetch_time)
-        count = count + 1
+            fetch_times.append(float(fetch_time))
         sleep(5)
         now = time()
         delta = now - start_time
@@ -197,8 +195,8 @@ def bufferbloat():
     # times.  You don't need to plot them.  Just note it in your
     # README and explain.
     stats = mean_stddev(fetch_times)
-    print "Average: " + str(stats[0])
-    print "Std. Deviation: " + str(stats[1])
+    print "Average Fetch Time: " + str(stats[0])
+    print "S Deviation: " + str(stats[1])
 
     # Hint: The command below invokes a CLI which you can use to
     # debug.  It allows you to run arbitrary commands inside your
