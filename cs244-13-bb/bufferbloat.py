@@ -82,8 +82,8 @@ class BBTopo(Topo):
         s0 = self.addSwitch('s0')
 
         # TODO: Add links with appropriate characteristics
-        l1 = self.addLink(h1, s0, delay="10ms")
-        l2 = self.addLink(h2, s0, delay="10ms")
+        l1 = self.addLink(h1, s0, delay=str(args.delay)+"ms", bw=args.bw_host)
+        l2 = self.addLink(h2, s0, delay=str(args.delay)+"ms", bw=args.bw_net, max_queue_size=args.maxq)
         return
 
 # Simple wrappers around monitoring utilities.  You are welcome to
@@ -110,10 +110,10 @@ def start_iperf(net):
     # For those who are curious about the -w 16m parameter, it ensures
     # that the TCP flow is not receiver window limited.  If it is,
     # there is a chance that the router buffer may not get filled up.
-    server = h2.popen("iperf -s -w 16m")
+    server = h2.popen("iperf -s -w 16m", shell=True)
     # TODO: Start the iperf client on h1.  Ensure that you create a
     # long lived TCP flow.
-    client = h1.popen("iperf -c h2 -w 16m")
+    client = h1.popen("iperf -c "+h2.IP()+" -t "+ str(args.time+10) +" > ~/iperf.txt", shell=True)
 
 def start_webserver(net):
     h1 = net.getNodeByName('h1')
@@ -125,13 +125,21 @@ def start_ping(net):
     # TODO: Start a ping train from h1 to h2 (or h2 to h1, does it
     # matter?)  Measure RTTs every 0.1 second.  Read the ping man page
     # to see how to do this.
-
+    print "Starting ping..."
     # Hint: Use host.popen(cmd, shell=True).  If you pass shell=True
     # to popen, you can redirect cmd's output using shell syntax.
     # i.e. ping ... > /path/to/ping.
     h1 = net.getNodeByName('h1')
     h2 = net.getNodeByName('h2')
-    h1.popen("ping h2", shell=True)
+    foo = h1.popen("ping -i 0.1 " + h2.IP() + " > " + args.dir +"/ping.txt", shell=True)
+
+def mean_stddev(values):
+    avg = sum(values) / len(values)
+    sq_diffs = [len(values)]
+    for x in range(len(values)):
+        sq_diffs[x] = pow(values[x] - avg, 2)
+    std_dev = math.sqrt(sum(sq_diffs) / len(values))
+    return (avg, std_dev)
 
 def bufferbloat():
     if not os.path.exists(args.dir):
@@ -145,7 +153,6 @@ def bufferbloat():
     dumpNodeConnections(net.hosts)
     # This performs a basic all pairs ping test.
     net.pingAll()
-
     # Start all the monitoring processes
     start_tcpprobe("cwnd.txt")
 
@@ -156,21 +163,29 @@ def bufferbloat():
     # number may be 1 or 2.  Ensure you use the correct number.
     qmon = start_qmon(iface='s0-eth2',
                       outfile='%s/q.txt' % (args.dir))
-
     # TODO: Start iperf, webservers, etc.
-    # start_iperf(net)
-
+    start_iperf(net)
+    start_webserver(net)
+    start_ping(net)
     # TODO: measure the time it takes to complete webpage transfer
     # from h1 to h2 (say) 3 times.  Hint: check what the following
     # command does: curl -o /dev/null -s -w %{time_total} google.com
     # Now use the curl command to fetch webpage from the webserver you
     # spawned on host h1 (not from google!)
+    h1 = net.getNodeByName('h1')
+    h2 = net.getNodeByName('h2')
 
     # Hint: have a separate function to do this and you may find the
     # loop below useful.
     start_time = time()
+    count = 0
+    fetch_times= []
     while True:
         # do the measurement (say) 3 times.
+        for x in range(3):
+            fetch_time = h2.cmd("curl -o /dev/null -s -w %{time_total} " + h1.IP() + ":8000/http/index.html")
+            fetch_times.append(fetch_time)
+        count = count + 1
         sleep(5)
         now = time()
         delta = now - start_time
@@ -181,6 +196,9 @@ def bufferbloat():
     # TODO: compute average (and standard deviation) of the fetch
     # times.  You don't need to plot them.  Just note it in your
     # README and explain.
+    stats = mean_stddev(fetch_times)
+    print "Average: " + str(stats[0])
+    print "Std. Deviation: " + str(stats[1])
 
     # Hint: The command below invokes a CLI which you can use to
     # debug.  It allows you to run arbitrary commands inside your
