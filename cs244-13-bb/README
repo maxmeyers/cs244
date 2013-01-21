@@ -1,0 +1,11 @@
+cs244-assignment-1
+==================
+
+Statistics:
+100 Packet Queue:
+ - Average Fetch Time: 0.58386 seconds
+ - Standard Deviation: 0.12606 seconds
+
+20 Packet Queue:
+ - Average Fetch Time: 0.13257 seconds
+ - Standard Deviation: 0.09563 seconds
