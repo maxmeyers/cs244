@@ -1,6 +1,9 @@
 cs244-assignment-1
 ==================
 
+Name: Max Meyers
+SUNet ID: maxjacob
+
 Statistics:
 100 Packet Queue:
  - Average Fetch Time: 0.58386 seconds
@@ -9,3 +12,21 @@ Statistics:
 20 Packet Queue:
  - Average Fetch Time: 0.13257 seconds
  - Standard Deviation: 0.09563 seconds
+
+Questions:
+
+1. The large buffer size causes TCP to send more packets than the network topology can support -- because TCP replies on packet drops to determine bandwidth. Thus, the bigger the queue, the longer the wait time for packets coming in. Therefore, the webpage fetch time is bottlenecked by the large queue full of TCP packets that are arriving too quickly.
+
+2. The maximum transit queue length on EC2 is 1000 packets. A full queue would then have 1,000*1,500=1,500,000 bytes = 12,000,000 bits. If they are draining at 100 Mb/s, it would take .12 seconds before the 1000th packet could finish leaving the queue.
+
+3. RTT(t, r) = Pd(r)*2 + L(t)/D
+
+t: time
+r: route
+Pd: propagation delay of a given route
+L: length of queue at a given time, in bits
+D: drainage rate of the queue, in bits/sec
+
+4. One way to mitigate bufferbloat is by using appropriately sized queues in network routers, given a network topology. Ideally, we would use queues of maximum size that give 100% bandwidth usage. In this case, we saw that a 100 packet queue was too big. One must be careful not to go too small, however, and underutilize the bandwidth by dropping too many packets.
+
+Another way would be to modify the TCP congestion control algorithm to not depend so heavily on dropped packets as a method of slowing down. If TCP had more information about the state of queues and topology, it could more effectively moderate its bandwidth.
