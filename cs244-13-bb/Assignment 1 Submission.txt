@@ -1,0 +1,66 @@
+Last login: Mon Jan 21 13:53:58 on ttys000
+Maxs-MacBook-Pro:cs244-assignment-1 maxmeyers$ ssh maxjacob@cardinal.stanford.edu
+Warning: Permanently added the RSA host key for IP address '171.67.24.125' to the list of known hosts.
+Password: 
+cardinal1.stanford.edu - Ubuntu 12.04.1 LTS kernel 3.2.0-33-generic (x86_64)
+1-core Xeon E5620 @ 2.40GHz (vmware); 1.96 GB RAM, 3.91 GB swap
+ --*-*- Stanford University Research Computing -*-*--
+
+   _____                    ____  _
+  |  ___|_ _ _ __ _ __ ___ / ___|| |__   __ _ _ __ ___
+  | |_ / _` | '__| '_ ` _ \\___ \| '_ \ / _` | '__/ _ \
+  |  _| (_| | |  | | | | | |___) | | | | (_| | | |  __/
+  |_|  \__,_|_|  |_| |_| |_|____/|_| |_|\__,_|_|  \___|
+
+
+       http://farmshare.stanford.edu     (wiki, newer)
+       http://lelandpolicy.stanford.edu  (static, older) 
+
+ The cardinal instances are intended for e-mail, chat, and other "light weight"
+ programs. CPU- or I/O-intensive programs should be run on the corn machines.  
+
+cardinal1:~> ls
+Desktop    Downloads  Music  Pictures  bufferbloat.tar.gz  hw8.tar  public
+Documents  Mail       News   WWW       hw8                 private  tmp
+cardinal1:~> /afs/ir/class/cs
+cardinal1:~> /afs/ir/class/cs/afs/ir/class/cs244/bin/submit 1 bufferbloat.tar.gz 
+/afs/ir/class/cs/afs/ir/class/cs244/bin/submit: Command not found.
+cardinal1:~> /afs/ir/class/cs244/bin/submit 1 bufferbloat.tar.gz 
+
+CS244 Submission Program
+-------------------------
+NOTE: Grade and group information is tracked automatically using
+the information provided below.  PLEASE ENTER ALL DATA CAREFULLY!
+
+NOTE: Ignore any illegal rights character errors... they are fine.
+
+
+/usr/class/cs244/sub2013/pa1/maxjacob
+
+Getting group member information:
+
+Submitting assignment for SUNet ID: maxjacob
+Please enter your real First Name (No Spaces!): Max
+Please enter your real Last Name (No Spaces!): Meyers
+
+Do you have another group member (y/n)? n
+
+Please verify the following information:
+Assignment #1: bufferbloat
+Group:  Max Meyers <maxjacob@stanford.edu>
+Is this information correct (y/n)? y
+
+Copying your entire code tree to /tmp for processing... SUCCESS
+Compressing your files into submission directory... SUCCESS
+Setting up submission directory... SUCCESS
+Cleaning up temporary files... SUCCESS
+----------------------
+
+Submission of CS244 Assignment #1 successful!
+* Timestamped: Mon Jan 21 13:56:55 PST 2013
+* MD5 checksum and the submitted file: ebe0a5707bb64e16c190602b6f2b2a75  bufferbloat.tar.gz
+
+IMPORTANT: If for any reason you saw Permission Denied errors
+           during your submissions, please email staff for further instructions
+Group: maxjacob  
+cardinal1:~> 
