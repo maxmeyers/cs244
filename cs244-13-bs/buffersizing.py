@@ -8,6 +8,7 @@ from mininet.link import TCLink
 from mininet.net import Mininet
 from mininet.log import lg
 from mininet.util import dumpNodeConnections
+from mininet.cli import CLI
 
 import subprocess
 from subprocess import Popen, PIPE
@@ -155,8 +156,14 @@ class StarTopo(Topo):
     # topology Set appropriate values for bandwidth, delay, and queue
     # size.
     def create_topology(self):
-        pass
+        s0 = self.addSwitch('s0')
+        h0 = self.addHost('h0')
+        link_delay = float(args.delay)/2
+        net_link = self.addLink(h0, s0, delay=('%fms' % link_delay), bw=self.bw_net, max_queue_size=self.maxq)
 
+        for x in range(self.n):
+            hx = self.addHost('h'+str(x))
+            local_link = self.addLink(hx, s0, delay=('%fms' % link_delay), bw=self.bw_host, max_queue_size=self.maxq)
 def start_tcpprobe():
     "Install tcp_probe module and dump to file"
     os.system("rmmod tcp_probe 2>/dev/null; modprobe tcp_probe;")
@@ -307,7 +314,7 @@ def do_sweep(iface):
     # Wait till link is 100% utilised and train
     reference_rate = 0.0
     while reference_rate <= args.bw_net * START_BW_FRACTION:
-        rates = get_rates(iface, nsamples=CALIBRATION_SAMPLES+CALIBRATION_SKIP)
+        rates = get_rates(iface, nsamples=CALIBRATION_SAMPLES+CALIBRATION_SKIP, period=0.2)
         print "measured calibration rates: %s" % rates
         # Ignore first N; need to ramp up to full speed.
         rates = rates[CALIBRATION_SKIP:]
@@ -322,6 +329,21 @@ def do_sweep(iface):
         mid = (min_q + max_q) / 2
         print "Trying q=%d  [%d,%d] " % (mid, min_q, max_q),
         sys.stdout.flush()
+
+        set_q(iface, mid)
+
+        rates=get_rates(iface, nsamples=CALIBRATION_SAMPLES+CALIBRATION_SKIP, period=0.2)
+        rates=rates[CALIBRATION_SKIP:]
+        reference_rate = median(rates)
+        print "reference_rate: %s" % reference_rate
+        ru_max = max(rates)
+        ru_stdev = stdev(rates)
+
+
+        if ok(reference_rate / args.bw_net):
+            max_q = mid
+        else:
+            min_q = mid
 
         # TODO: Binary search over queue sizes.
         # (1) Check if a queue size of "mid" achieves required utilization
@@ -343,15 +365,35 @@ def do_sweep(iface):
 # settings of your topology
 
 def verify_latency(net):
-    "(Incomplete) verify link latency"
-    pass
+    "verify link latency"
+    print "Verifying latency..."
+    h0 = net.getNodeByName('h0')
+    h1 = net.getNodeByName('h1')
+    h2 = net.getNodeByName('h2')
+    net.pingFull(hosts=[h0, h1])
+    net.pingFull(hosts=[h0, h2])
 
 # TODO: Fill in the following function to verify the bandwidth
 # settings of your topology
 
 def verify_bandwidth(net):
     "(Incomplete) verify link bandwidth"
-    pass
+    print "Verifying bandwidth..."
+    h0 = net.getNodeByName('h0')
+    h1 = net.getNodeByName('h1')
+    h2 = net.getNodeByName('h2')
+    # s0 = net.getNodeByName('s0')
+    server = h0.popen("iperf -s -w 16m", shell=True)
+    client = h1.popen("iperf -c "+h0.IP()+" -t "+ str(100) +" > ~/iperf.txt", shell=True)
+    print get_rates('h1-eth0')
+    print get_rates('s0-eth1')
+    # print get_rates('h1-eth1')
+    # print get_rates('h1-eth2')
+
+    server.terminate()
+    client.terminate()
+    # net.iperf([h1, h0])
+    # net.iperf([h1, h2])
 
 # TODO: Fill in the following function to
 # Start iperf on the receiver node
@@ -363,7 +405,8 @@ def verify_bandwidth(net):
 #       It will be used later in count_connections()
 
 def start_receiver(net):
-    pass
+    h0 = net.getNodeByName('h0')
+    h0.popen('iperf %s -s -p %s > %s/iperf_server.txt' % (CUSTOM_IPERF_PATH, 5001, args.dir), shell=True)
 
 # TODO: Fill in the following function to
 # Start args.nflows flows across the senders in a round-robin fashion
@@ -380,7 +423,11 @@ def start_receiver(net):
 def start_senders(net):
     # Seconds to run iperf; keep this very high
     seconds = 3600
-    pass
+    h0 = net.getNodeByName('h0')
+    h1 = net.getNodeByName('h1')
+    h2 = net.getNodeByName('h2')
+    h1.popen('%s -c %s -p %s -t %d -i 1 -yc -Z %s > %s/iperf_h1.txt' % (CUSTOM_IPERF_PATH, h0.IP(), 5001, seconds, args.cong, args.dir), shell=True)
+    h2.popen('%s -c %s -p %s -t %d -i 1 -yc -Z %s > %s/iperf_h2.txt' % (CUSTOM_IPERF_PATH, h0.IP(), 5001, seconds, args.cong, args.dir), shell=True)
 
 def main():
     "Create network and run Buffer Sizing experiment"
@@ -398,7 +445,7 @@ def main():
     # TODO: verify latency and bandwidth of links in the topology you
     # just created.
     verify_latency(net)
-    verify_bandwidth(net)
+    # verify_bandwidth(net)
 
     start_receiver(net)
 
