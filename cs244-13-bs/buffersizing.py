@@ -343,7 +343,7 @@ def do_sweep(iface):
         if ok(reference_rate / args.bw_net):
             max_q = mid
         else:
-            min_q = mid
+            min_q = mid + 1
 
         # TODO: Binary search over queue sizes.
         # (1) Check if a queue size of "mid" achieves required utilization
