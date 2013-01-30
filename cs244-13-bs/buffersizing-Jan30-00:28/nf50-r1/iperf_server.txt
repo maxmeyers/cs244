@@ -1,0 +1,207 @@
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  5] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53492
+[  6] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49546
+[  7] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53494
+[  8] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49548
+[  9] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53496
+[ 10] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49550
+[ 11] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53498
+[ 12] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49552
+[ 13] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53500
+[ 14] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49554
+[ 15] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53502
+[ 16] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49556
+[ 17] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53504
+[ 18] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49558
+[ 19] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53506
+[ 20] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49560
+[ 21] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53508
+[ 22] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49562
+[ 23] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53510
+[ 24] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49564
+[ 25] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53512
+[ 26] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49566
+[ 27] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53514
+[ 28] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49568
+[ 29] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53516
+[ 30] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49570
+[ 31] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53518
+[ 32] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49572
+[ 33] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53520
+[ 34] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49574
+[ 35] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53522
+[ 36] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49577
+[ 37] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53523
+[ 38] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53525
+[ 39] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49579
+[ 40] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53527
+[ 41] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53528
+[ 42] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49582
+[ 43] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53530
+[ 44] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49584
+[ 45] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53532
+[ 46] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49586
+[ 47] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49587
+[ 48] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53535
+[ 49] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49589
+[ 50] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53537
+[ 51] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49591
+[ 52] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53539
+[ 53] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49593
+[ 54] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53541
+[ 55] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49597
+[ 56] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49596
+[ 57] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53542
+[ 58] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53545
+[ 59] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49599
+[ 60] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53547
+[ 61] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49601
+[ 62] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49602
+[ 63] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53550
+[ 64] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53551
+[ 65] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49605
+[ 66] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49606
+[ 67] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49607
+[ 68] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53555
+[ 69] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53556
+[ 70] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49610
+[ 71] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49611
+[ 72] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53559
+[ 73] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53560
+[ 74] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53561
+[ 75] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49615
+[ 76] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49617
+[ 77] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49616
+[ 78] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49618
+[ 79] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49619
+[ 80] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53567
+[ 81] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49621
+[ 82] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49622
+[ 83] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49623
+[ 84] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49624
+[ 85] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53573
+[ 86] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53572
+[ 87] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53574
+[ 88] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53575
+[ 89] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53576
+[ 90] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53577
+[ 91] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53578
+[ 92] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53580
+[ 93] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49632
+[ 94] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49634
+[ 95] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49635
+[ 96] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49636
+[ 97] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53584
+[ 98] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53586
+[ 99] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53585
+[100] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49640
+[101] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53590
+[102] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49642
+[103] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 53588
+[104] local 10.0.0.1 port 5001 connected with 10.0.0.3 port 49644
+[ ID] Interval       Transfer     Bandwidth
+[102]  0.0-400.8 sec  26.3 MBytes   551 Kbits/sec
+[ 58]  0.0-401.1 sec  26.3 MBytes   551 Kbits/sec
+[ 89]  0.0-401.1 sec  26.0 MBytes   545 Kbits/sec
+[ 76]  0.0-400.9 sec  27.4 MBytes   573 Kbits/sec
+[ 91]  0.0-401.1 sec  25.9 MBytes   542 Kbits/sec
+[ 57]  0.0-401.2 sec  26.5 MBytes   554 Kbits/sec
+[ 62]  0.0-400.9 sec  25.7 MBytes   537 Kbits/sec
+[ 94]  0.0-400.9 sec  24.6 MBytes   515 Kbits/sec
+[ 56]  0.0-400.9 sec  26.3 MBytes   551 Kbits/sec
+[ 77]  0.0-400.9 sec  27.8 MBytes   581 Kbits/sec
+[ 59]  0.0-400.9 sec  26.6 MBytes   556 Kbits/sec
+[103]  0.0-401.2 sec  27.0 MBytes   565 Kbits/sec
+[ 19]  0.0-401.2 sec  27.1 MBytes   567 Kbits/sec
+[101]  0.0-401.2 sec  26.9 MBytes   562 Kbits/sec
+[ 55]  0.0-400.9 sec  26.9 MBytes   563 Kbits/sec
+[ 93]  0.0-400.9 sec  27.7 MBytes   579 Kbits/sec
+[ 40]  0.0-401.2 sec  27.5 MBytes   575 Kbits/sec
+[ 41]  0.0-401.2 sec  26.2 MBytes   547 Kbits/sec
+[ 61]  0.0-400.9 sec  25.7 MBytes   537 Kbits/sec
+[ 36]  0.0-400.9 sec  27.4 MBytes   573 Kbits/sec
+[ 69]  0.0-401.2 sec  28.7 MBytes   601 Kbits/sec
+[ 35]  0.0-401.2 sec  27.2 MBytes   568 Kbits/sec
+[ 38]  0.0-401.2 sec  25.7 MBytes   538 Kbits/sec
+[ 63]  0.0-401.2 sec  27.5 MBytes   575 Kbits/sec
+[ 80]  0.0-401.2 sec  26.5 MBytes   553 Kbits/sec
+[ 86]  0.0-401.2 sec  26.8 MBytes   559 Kbits/sec
+[ 96]  0.0-401.0 sec  25.6 MBytes   536 Kbits/sec
+[100]  0.0-401.0 sec  26.3 MBytes   550 Kbits/sec
+[ 87]  0.0-401.2 sec  27.7 MBytes   580 Kbits/sec
+[ 97]  0.0-401.3 sec  26.6 MBytes   556 Kbits/sec
+[ 44]  0.0-401.0 sec  26.5 MBytes   554 Kbits/sec
+[ 28]  0.0-401.0 sec  28.3 MBytes   592 Kbits/sec
+[ 65]  0.0-401.0 sec  27.8 MBytes   582 Kbits/sec
+[ 88]  0.0-401.3 sec  26.8 MBytes   561 Kbits/sec
+[ 22]  0.0-401.0 sec  27.5 MBytes   576 Kbits/sec
+[ 85]  0.0-401.3 sec  27.5 MBytes   575 Kbits/sec
+[ 92]  0.0-401.3 sec  26.1 MBytes   545 Kbits/sec
+[ 16]  0.0-401.0 sec  27.4 MBytes   573 Kbits/sec
+[ 50]  0.0-401.3 sec  29.1 MBytes   609 Kbits/sec
+[ 70]  0.0-401.0 sec  26.2 MBytes   549 Kbits/sec
+[ 30]  0.0-401.0 sec  26.1 MBytes   546 Kbits/sec
+[ 34]  0.0-401.0 sec  26.6 MBytes   556 Kbits/sec
+[ 45]  0.0-401.3 sec  26.2 MBytes   547 Kbits/sec
+[ 60]  0.0-401.3 sec  28.7 MBytes   601 Kbits/sec
+[ 79]  0.0-401.0 sec  25.7 MBytes   538 Kbits/sec
+[ 83]  0.0-401.0 sec  27.3 MBytes   571 Kbits/sec
+[104]  0.0-401.0 sec  26.9 MBytes   562 Kbits/sec
+[ 39]  0.0-401.1 sec  26.3 MBytes   551 Kbits/sec
+[ 74]  0.0-401.4 sec  28.2 MBytes   589 Kbits/sec
+[ 82]  0.0-401.1 sec  27.4 MBytes   573 Kbits/sec
+[ 73]  0.0-401.4 sec  26.4 MBytes   551 Kbits/sec
+[ 33]  0.0-401.4 sec  26.9 MBytes   563 Kbits/sec
+[ 90]  0.0-401.4 sec  28.2 MBytes   589 Kbits/sec
+[ 24]  0.0-401.1 sec  27.1 MBytes   567 Kbits/sec
+[ 43]  0.0-401.4 sec  27.1 MBytes   567 Kbits/sec
+[ 48]  0.0-401.4 sec  26.2 MBytes   547 Kbits/sec
+[ 54]  0.0-401.4 sec  26.6 MBytes   555 Kbits/sec
+[ 95]  0.0-401.1 sec  26.6 MBytes   557 Kbits/sec
+[ 13]  0.0-401.4 sec  29.3 MBytes   612 Kbits/sec
+[ 68]  0.0-401.4 sec  26.3 MBytes   549 Kbits/sec
+[ 12]  0.0-401.1 sec  27.2 MBytes   569 Kbits/sec
+[ 15]  0.0-401.4 sec  27.6 MBytes   577 Kbits/sec
+[ 78]  0.0-401.2 sec  27.2 MBytes   569 Kbits/sec
+[ 25]  0.0-401.5 sec  26.6 MBytes   555 Kbits/sec
+[ 75]  0.0-401.2 sec  27.4 MBytes   573 Kbits/sec
+[ 31]  0.0-401.5 sec  26.5 MBytes   554 Kbits/sec
+[ 26]  0.0-401.2 sec  26.8 MBytes   560 Kbits/sec
+[ 98]  0.0-401.5 sec  26.2 MBytes   548 Kbits/sec
+[ 20]  0.0-401.2 sec  27.2 MBytes   568 Kbits/sec
+[ 21]  0.0-401.5 sec  26.6 MBytes   556 Kbits/sec
+[ 23]  0.0-401.5 sec  25.7 MBytes   538 Kbits/sec
+[ 51]  0.0-401.2 sec  27.9 MBytes   582 Kbits/sec
+[ 66]  0.0-401.2 sec  28.0 MBytes   585 Kbits/sec
+[ 27]  0.0-401.5 sec  26.9 MBytes   562 Kbits/sec
+[ 99]  0.0-401.5 sec  26.5 MBytes   555 Kbits/sec
+[ 64]  0.0-401.5 sec  28.1 MBytes   587 Kbits/sec
+[ 72]  0.0-401.5 sec  26.5 MBytes   554 Kbits/sec
+[ 32]  0.0-401.3 sec  27.2 MBytes   568 Kbits/sec
+[ 42]  0.0-401.3 sec  26.6 MBytes   557 Kbits/sec
+[ 84]  0.0-401.3 sec  26.8 MBytes   561 Kbits/sec
+[ 10]  0.0-401.3 sec  28.8 MBytes   601 Kbits/sec
+[ 47]  0.0-401.3 sec  28.5 MBytes   596 Kbits/sec
+[ 49]  0.0-401.3 sec  27.5 MBytes   574 Kbits/sec
+[ 18]  0.0-401.4 sec  26.8 MBytes   559 Kbits/sec
+[ 46]  0.0-401.4 sec  28.0 MBytes   586 Kbits/sec
+[ 53]  0.0-401.4 sec  29.3 MBytes   611 Kbits/sec
+[ 71]  0.0-401.4 sec  25.8 MBytes   538 Kbits/sec
+[ 29]  0.0-401.7 sec  30.7 MBytes   642 Kbits/sec
+[ 81]  0.0-401.4 sec  26.9 MBytes   563 Kbits/sec
+[ 17]  0.0-401.8 sec  27.4 MBytes   573 Kbits/sec
+[ 11]  0.0-401.9 sec  28.5 MBytes   594 Kbits/sec
+[ 14]  0.0-401.6 sec  27.9 MBytes   584 Kbits/sec
+[  9]  0.0-402.1 sec  29.3 MBytes   611 Kbits/sec
+[  7]  0.0-402.4 sec  30.3 MBytes   631 Kbits/sec
+[ 67]  0.0-402.1 sec  28.5 MBytes   594 Kbits/sec
+[ 37]  0.0-402.4 sec  26.9 MBytes   561 Kbits/sec
+[ 52]  0.0-402.4 sec  28.2 MBytes   588 Kbits/sec
+[  6]  0.0-402.2 sec  33.4 MBytes   697 Kbits/sec
+[  8]  0.0-402.4 sec  28.5 MBytes   593 Kbits/sec
+[SUM]  0.0-402.4 sec  1.33 GBytes  28.4 Mbits/sec
+[  5]  0.0-402.9 sec  35.3 MBytes   734 Kbits/sec
+[SUM]  0.0-402.9 sec  1.34 GBytes  28.5 Mbits/sec
